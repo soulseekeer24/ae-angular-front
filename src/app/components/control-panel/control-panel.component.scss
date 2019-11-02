@@ -7,11 +7,26 @@
   padding-top: 5px;
 }
 
-.format-actions {
-  width: 200px;
-  margin-right: 400px;
-}
 
 button + button {
   margin-left: 5px;
 }
+
+input{
+   margin-left: 5px;
+}
+
+select{
+   margin-left: 5px;
+}
+
+label{
+   margin-left: 5px;
+}
+button {
+  outline:none;
+  &.is-active {
+    background-color: blue;
+  }
+}
+

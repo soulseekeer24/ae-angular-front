@@ -1,0 +1,8 @@
+<div class="file">
+    <span [ngStyle]="word.styleProps.styleObject" *ngFor="let word of words$ | async" (click)="onClick(word)">
+        <span *ngIf="word != textService.selectedWord$.getValue()">
+            {{word.content}} </span>
+        <span class="selected-word" *ngIf="word == textService.selectedWord$.getValue()">
+            {{word.content}} </span>
+    </span>
+</div>

@@ -1,0 +1,16 @@
+<div *ngIf="(selectedWord$ | async)">
+  <div class="format-actions">
+    <button [class.is-active]="selectedWord?.styleProps?.isBold" class="format-action"
+      (click)="applyStyle('isBold',!selectedWord?.styleProps?.isBold)" type="button"><b>B</b></button>
+    <button [class.is-active]="selectedWord?.styleProps?.isItalic" class=" format-action"
+      (click)="applyStyle('isItalic',!selectedWord?.styleProps?.isItalic)" type="button"><i>I</i></button>
+    <button [class.is-active]="selectedWord?.styleProps?.isUnderline" class=" format-action"
+      (click)="applyStyle('isUnderline',!selectedWord?.styleProps?.isUnderline)" type="button"><u>U</u></button>
+
+    <input type="text" [(ngModel)]="selectedWord.content">
+    <label>synonyms</label>
+    <select (change)="changeWord($event.target.value)">
+      <option> {{selectedWord.content}}</option>
+      <option *ngFor="let word of synonyms$ | async"> {{word}}</option>
+    </select>
+  </div>
